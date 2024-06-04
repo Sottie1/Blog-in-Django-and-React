@@ -1,0 +1,1 @@
+# Blog in Django and React Frondend templates
