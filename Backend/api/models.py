@@ -83,8 +83,8 @@ class Category(models.Model):
 class Post(models.Model):
     STATUS = [
         ("Active", "Active"),
-        ("Active", "Active"),
-        ("Active", "Active"),
+        ("Draft", "Draft"),
+        ("Disabled", "Disabled"),
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)

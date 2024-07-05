@@ -32,14 +32,14 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = api_models.User.objects.create(
-            full_name = validated_data['full_name']
-            email = validated_data['email']
+            full_name = validated_data['full_name'],
+            email = validated_data['email'],
         )
 
         email_username, mobile = user.email.split('@')
         user.username = email_username
 
-        user.set_password(validate_password['password'])
+        user.set_password(validated_data['password'])
         user.save()
 
         return user
